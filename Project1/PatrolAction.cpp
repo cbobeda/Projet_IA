@@ -17,8 +17,16 @@ void PatrolAction::Execute(State& state,GOAPEnemy& enemy)
         return;
     }
 
-    
-    if (std::abs(enemy.shape.getPosition().x - position[enemy.i].x) > 0.1f) {
+    if (path.empty())
+    {
+        path = Pathfinding::findPath(grid, sf::Vector2i(1,1), position[enemy.i]);
+            
+        for (auto path : path)
+        {
+            grid.cells[path.y][path.x].walkable = 0;
+        }
+    }
+    /*if (std::abs(enemy.shape.getPosition().x - position[enemy.i].x) > 0.1f) {
         float dirX = (position[enemy.i].x > enemy.shape.getPosition().x) ? 1.0f : -1.0f;
         enemy.shape.move(dirX * 10, 0);
     }
@@ -27,7 +35,7 @@ void PatrolAction::Execute(State& state,GOAPEnemy& enemy)
     if (std::abs(enemy.shape.getPosition().y - position[enemy.i].y) > 0.1f) {
         float dirY = (position[enemy.i].y > enemy.shape.getPosition().y) ? 1.0f : -1.0f;
         enemy.shape.move(0, dirY * 10);
-    }
+    }*/
 
     
     if (std::abs(enemy.shape.getPosition().x - position[enemy.i].x) <= 1.1f &&

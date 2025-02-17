@@ -7,15 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="merge">
-      <change afterPath="$PROJECT_DIR$/Project1/BTNode.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/BTNode.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/NodeState.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/NodeState.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/SequenceNode.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/SequenceNode.h" afterDir="false" />
+    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="debut">
+      <change afterPath="$PROJECT_DIR$/Project1/Node.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project1/Node.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project1/Pathfinding.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project1/Pathfinding.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/GOAPEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPEnemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Grid.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Grid.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Grid.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/PatrolAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PatrolAction.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/Project1.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Project1.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="behaviorTree" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,6 +50,11 @@
     &quot;accountId&quot;: &quot;12a31af1-9c39-46e5-b5e2-4386aa35360c&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://2" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -60,7 +70,7 @@
     "C/C++ Project.Project1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "behaviorTree",
+    "git-widget-placeholder": "PathFinding",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,7 +111,7 @@
       <updated>1739547689932</updated>
       <workItem from="1739547692621" duration="4531000" />
       <workItem from="1739796588958" duration="4775000" />
-      <workItem from="1739801390257" duration="3266000" />
+      <workItem from="1739801390257" duration="5605000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation du GOAP">
       <option name="closed" value="true" />
@@ -127,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739801847805</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="debut">
+      <option name="closed" value="true" />
+      <created>1739808445066</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739808445066</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +169,7 @@
     <MESSAGE value="Implementation du GOAP" />
     <MESSAGE value="poof" />
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <MESSAGE value="debut" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut" />
   </component>
 </project>

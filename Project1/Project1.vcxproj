@@ -149,7 +149,9 @@
     <ClCompile Include="GOAPPlanner.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeState.cpp" />
+    <ClCompile Include="Pathfinding.cpp" />
     <ClCompile Include="PatrolAction.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SequenceNode.cpp" />
@@ -167,7 +169,9 @@
     <ClInclude Include="GOAPEnemy.h" />
     <ClInclude Include="GOAPPlanner.h" />
     <ClInclude Include="Grid.hpp" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="NodeState.h" />
+    <ClInclude Include="Pathfinding.h" />
     <ClInclude Include="PatrolAction.h" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="SequenceNode.h" />

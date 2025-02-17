@@ -37,6 +37,13 @@ void Grid::loadFromFile(const std::string& filename) {
 
 void Grid::draw(sf::RenderWindow& window) {
     for (int y = 0; y < GRID_HEIGHT; ++y) {
+        for (int x = 0; x < GRID_WIDTH ; ++x) {
+            if (!cells[y][x].walkable) {
+                cells[y][x].shape.setFillColor(sf::Color::White);
+            }
+        }
+    }
+    for (int y = 0; y < GRID_HEIGHT; ++y) {
         for (int x = 0; x < GRID_WIDTH; ++x) {
             window.draw(cells[y][x].shape);
         }
