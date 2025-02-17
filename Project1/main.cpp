@@ -2,6 +2,7 @@
 #include "Player.hpp"
 #include "Enemy.hpp"
 #include "Grid.hpp"
+#include "GOAPEnemy.h"
 #include <vector>
 
 
@@ -13,7 +14,7 @@ int main() {
     window.setFramerateLimit(60);
 
     Player player(200, 400);
-    std::vector<Enemy> enemies = { Enemy(100, 100), Enemy(700, 100) };
+    std::vector<GOAPEnemy> enemies = { GOAPEnemy(100, 100), GOAPEnemy(700, 100) };
     Grid grid;
     grid.loadFromFile("map.txt");
 
@@ -31,7 +32,7 @@ int main() {
 
         player.update(deltaTime, grid);
         for (auto& enemy : enemies) {
-            enemy.update(deltaTime, grid);
+            enemy.update(deltaTime, grid,enemy);
         }
 
         window.clear();

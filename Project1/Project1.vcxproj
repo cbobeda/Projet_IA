@@ -137,17 +137,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="AttackAction.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FleeAction.cpp" />
+    <ClCompile Include="FollowAction.cpp" />
+    <ClCompile Include="GOAPAgent.cpp" />
+    <ClCompile Include="GOAPEnemy.cpp" />
+    <ClCompile Include="GOAPPlanner.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PatrolAction.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="AttackAction.h" />
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="FleeAction.h" />
+    <ClInclude Include="FollowAction.h" />
+    <ClInclude Include="GOAPAgent.h" />
+    <ClInclude Include="GOAPEnemy.h" />
+    <ClInclude Include="GOAPPlanner.h" />
     <ClInclude Include="Grid.hpp" />
+    <ClInclude Include="PatrolAction.h" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="State.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
