@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="" />
+    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="poof" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +51,7 @@
     "C/C++ Project.Project1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,6 +92,7 @@
       <updated>1739547689932</updated>
       <workItem from="1739547692621" duration="4531000" />
       <workItem from="1739796588958" duration="4775000" />
+      <workItem from="1739801390257" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation du GOAP">
       <option name="closed" value="true" />
@@ -100,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739801300392</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="poof">
+      <option name="closed" value="true" />
+      <created>1739801430087</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739801430087</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +132,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Implementation du GOAP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation du GOAP" />
+    <MESSAGE value="poof" />
+    <option name="LAST_COMMIT_MESSAGE" value="poof" />
   </component>
 </project>
