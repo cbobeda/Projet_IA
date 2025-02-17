@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="AttackAction.cpp" />
+    <ClCompile Include="BTNode.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FleeAction.cpp" />
@@ -148,13 +149,16 @@
     <ClCompile Include="GOAPPlanner.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NodeState.cpp" />
     <ClCompile Include="PatrolAction.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SequenceNode.cpp" />
     <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
     <ClInclude Include="AttackAction.h" />
+    <ClInclude Include="BTNode.h" />
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="FleeAction.h" />
@@ -163,8 +167,10 @@
     <ClInclude Include="GOAPEnemy.h" />
     <ClInclude Include="GOAPPlanner.h" />
     <ClInclude Include="Grid.hpp" />
+    <ClInclude Include="NodeState.h" />
     <ClInclude Include="PatrolAction.h" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="SequenceNode.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
