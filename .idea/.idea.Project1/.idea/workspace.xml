@@ -7,19 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="debut">
-      <change afterPath="$PROJECT_DIR$/Project1/Node.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/Node.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/Pathfinding.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/Pathfinding.h" afterDir="false" />
+    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="Push error">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/GOAPEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPEnemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/GOAPEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPEnemy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/Grid.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Grid.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Node.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/PatrolAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PatrolAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/Project1.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Project1.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/PatrolAction.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PatrolAction.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,20 +60,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "C/C++ Project.Project1.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "PathFinding",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C/C++ Project.Project1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;PathFinding&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Project1" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -111,7 +106,8 @@
       <updated>1739547689932</updated>
       <workItem from="1739547692621" duration="4531000" />
       <workItem from="1739796588958" duration="4775000" />
-      <workItem from="1739801390257" duration="5605000" />
+      <workItem from="1739801390257" duration="6171000" />
+      <workItem from="1739860696564" duration="5547000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation du GOAP">
       <option name="closed" value="true" />
@@ -145,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739808445066</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Push error">
+      <option name="closed" value="true" />
+      <created>1739811269854</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739811269855</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +174,7 @@
     <MESSAGE value="poof" />
     <MESSAGE value="merge" />
     <MESSAGE value="debut" />
-    <option name="LAST_COMMIT_MESSAGE" value="debut" />
+    <MESSAGE value="Push error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push error" />
   </component>
 </project>

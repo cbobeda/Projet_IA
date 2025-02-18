@@ -5,8 +5,6 @@
 #include <algorithm>
 #include "Grid.hpp"
 
-extern Grid grid;
-
 
 class Node {
 public:

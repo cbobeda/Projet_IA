@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 
+Grid grid;
 
 Grid::Grid() {
     cells.resize(GRID_HEIGHT, std::vector<Cell>(GRID_WIDTH, { true, {0, 0}, sf::RectangleShape(sf::Vector2f(CELL_SIZE, CELL_SIZE)) }));

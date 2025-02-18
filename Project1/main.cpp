@@ -4,7 +4,6 @@
 #include "Grid.hpp"
 #include "GOAPEnemy.h"
 #include "Pathfinding.h"
-#include "Node.h"
 #include <vector>
 
 
@@ -12,14 +11,14 @@ const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
 
 std::vector<sf::Vector2i> res;
-
+extern Grid grid;
 int main() {
     sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Jeu SFML - IA Ennemis");
     window.setFramerateLimit(60);
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     Player player(200, 400);
-    std::vector<GOAPEnemy> enemies = { GOAPEnemy(100, 100), GOAPEnemy(700, 100) };
-    Grid grid;
+    std::vector<GOAPEnemy> enemies = { GOAPEnemy(100, 100)};
+    //Grid grid;
     grid.loadFromFile("map.txt");
 
     sf::Clock clock;

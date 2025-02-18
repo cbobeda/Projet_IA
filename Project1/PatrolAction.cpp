@@ -7,43 +7,57 @@ bool PatrolAction::CanExecute(const State& state)
 {
     return true;
 }
+extern Grid grid;
+
+sf::Vector2f normalizeGOAP(const sf::Vector2f& vector)
+{
+    float length = std::sqrt(vector.x * vector.x + vector.y * vector.y);
+    
+    if (length == 0.0f)
+        return sf::Vector2f(0.0f, 0.0f);
+    return sf::Vector2f(vector.x / length, vector.y / length);
+}
+
+bool isClose(sf::Vector2f vector1, sf::Vector2f vector2, float tolerance = 10.f)
+{
+    return std::hypot(vector1.x - vector2.x, vector1.y - vector2.y) <= tolerance;
+}
+
+void PatrolAction::moveTowards(sf::Vector2i targPos,GOAPEnemy& enemy)
+{
+    if (!isClose(enemy.shape.getPosition(),sf::Vector2f(targPos.x * 40, targPos.y * 40)))
+    {
+        enemy.shape.move(normalizeGOAP(sf::Vector2f(targPos.x * 40, targPos.y * 40) - enemy.shape.getPosition()));
+        std::cout << normalizeGOAP(enemy.shape.getPosition() - sf::Vector2f(targPos.x * 40, targPos.y * 40)).x <<  normalizeGOAP(enemy.shape.getPosition() - sf::Vector2f(targPos.x * 40, targPos.y * 40)).y << std::endl;
+    }
+    if (isClose(enemy.shape.getPosition(),sf::Vector2f(targPos.x * 40, targPos.y * 40)))
+    {
+        std::cout << "PatrolAction::moveTowards" << std::endl;
+        enemy.pathIndex++;
+    }
+}
 
 void PatrolAction::Execute(State& state,GOAPEnemy& enemy)
 {
-    std::cout << "Action: patrouille\n";
     if (enemy.i >= 4) {
         std::cerr << "Erreur : Indice 'i' dépasse la taille de 'position'.\n";
         enemy.i = 0;
         return;
     }
-
-    if (path.empty())
+    std::cerr << enemy.pathIndex << std::endl;
+    if (enemy.path.size() == 0 || enemy.path.size() - 1 == enemy.pathIndex)
     {
-        path = Pathfinding::findPath(grid, sf::Vector2i(1,1), position[enemy.i]);
-            
-        for (auto path : path)
-        {
-            grid.cells[path.y][path.x].walkable = 0;
-        }
+        std::cout << "calculate patrol" << std::endl;
+        enemy.path = Pathfinding::findPath(grid, sf::Vector2i(2,2), position[enemy.i]);
+        std::cout << enemy.pathIndex << std::endl;
     }
-    /*if (std::abs(enemy.shape.getPosition().x - position[enemy.i].x) > 0.1f) {
-        float dirX = (position[enemy.i].x > enemy.shape.getPosition().x) ? 1.0f : -1.0f;
-        enemy.shape.move(dirX * 10, 0);
+    if (!enemy.path.empty() && enemy.pathIndex < enemy.path.size()) {
+        moveTowards(enemy.path[enemy.pathIndex], enemy);
     }
-
-    
-    if (std::abs(enemy.shape.getPosition().y - position[enemy.i].y) > 0.1f) {
-        float dirY = (position[enemy.i].y > enemy.shape.getPosition().y) ? 1.0f : -1.0f;
-        enemy.shape.move(0, dirY * 10);
-    }*/
-
-    
-    if (std::abs(enemy.shape.getPosition().x - position[enemy.i].x) <= 1.1f &&
-        std::abs(enemy.shape.getPosition().y - position[enemy.i].y) <= 1.1f) {
+    if (isClose(enemy.shape.getPosition(),sf::Vector2f(enemy.path[enemy.path.size()-1].x * 40, enemy.path[enemy.path.size()-1].y * 40)))
+    {
+        enemy.pathIndex = 0;
         enemy.i++;
-        state.energy -= 10;
-        if (enemy.i >= 4) {
-            enemy.i = 0; 
-        }
-        }
+        enemy.path.clear();
+    }
 }
