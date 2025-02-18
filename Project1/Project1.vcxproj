@@ -144,6 +144,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FleeAction.cpp" />
     <ClCompile Include="FollowAction.cpp" />
+    <ClCompile Include="FSMEnemy.cpp" />
     <ClCompile Include="GOAPAgent.cpp" />
     <ClCompile Include="GOAPEnemy.cpp" />
     <ClCompile Include="GOAPPlanner.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="FleeAction.h" />
     <ClInclude Include="FollowAction.h" />
+    <ClInclude Include="FSMEnemy.hpp" />
     <ClInclude Include="GOAPAgent.h" />
     <ClInclude Include="GOAPEnemy.h" />
     <ClInclude Include="GOAPPlanner.h" />

@@ -4,8 +4,8 @@
 #include "Grid.hpp"
 #include "GOAPEnemy.h"
 #include "Pathfinding.h"
+#include "FSMEnemy.hpp"
 #include <vector>
-
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
@@ -19,6 +19,14 @@ int main() {
     Player player(200, 400);
     std::vector<GOAPEnemy> enemies = { GOAPEnemy(100, 100)};
     //Grid grid;
+
+    
+    std::vector<GOAPEnemy> goapEnemies = { GOAPEnemy(100, 100), GOAPEnemy(700, 100) };
+
+    
+    std::vector<FSMEnemy> fsmEnemies = { FSMEnemy(sf::Vector2f(100, 100), 150.0f, 20.0f), FSMEnemy(sf::Vector2f(700, 100), 150.0f, 20.0f) };
+
+    Grid grid;
     grid.loadFromFile("map.txt");
 
     sf::Clock clock;
@@ -46,17 +54,36 @@ int main() {
             }
         }*/
         player.update(deltaTime, grid);
-        for (auto& enemy : enemies) {
-            enemy.update(deltaTime, grid,enemy);
+
+        
+        for (auto& enemy : goapEnemies) {
+            enemy.update(deltaTime, grid, enemy);
+        }
+
+        
+        for (auto& enemy : fsmEnemies) {
+            enemy.update(player.getPosition(), deltaTime);
         }
 
         window.clear();
+
+        
         grid.draw(window);
+
+       
         window.draw(player.shape);
-        for (const auto& enemy : enemies)
+
+        for (const auto& enemy : goapEnemies) {
             window.draw(enemy.shape);
+        }
+
+      
+        for (const auto& enemy : fsmEnemies) {
+            window.draw(enemy.circle);  
+        }
+
         window.display();
     }
+
     return 0;
 }
-
