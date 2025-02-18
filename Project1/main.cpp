@@ -17,11 +17,10 @@ int main() {
     window.setFramerateLimit(60);
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     Player player(200, 400);
-    std::vector<GOAPEnemy> enemies = { GOAPEnemy(100, 100)};
     //Grid grid;
 
     
-    std::vector<GOAPEnemy> goapEnemies = { GOAPEnemy(100, 100), GOAPEnemy(700, 100) };
+    std::vector<GOAPEnemy> goapEnemies = { GOAPEnemy(100, 100)};
 
     
     std::vector<FSMEnemy> fsmEnemies = { FSMEnemy(sf::Vector2f(100, 100), 150.0f, 20.0f), FSMEnemy(sf::Vector2f(700, 100), 150.0f, 20.0f) };
