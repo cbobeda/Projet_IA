@@ -25,7 +25,7 @@ int main() {
     
     std::vector<FSMEnemy> fsmEnemies = { FSMEnemy(sf::Vector2f(100, 100), 150.0f, 20.0f), FSMEnemy(sf::Vector2f(700, 100), 150.0f, 20.0f) };
 
-    Grid grid;
+
     grid.loadFromFile("map.txt");
 
     sf::Clock clock;

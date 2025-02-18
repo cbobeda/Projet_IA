@@ -28,11 +28,11 @@ void PatrolAction::moveTowards(sf::Vector2i targPos,GOAPEnemy& enemy)
     if (!isClose(enemy.shape.getPosition(),sf::Vector2f(targPos.x * 40, targPos.y * 40)))
     {
         enemy.shape.move(normalizeGOAP(sf::Vector2f(targPos.x * 40, targPos.y * 40) - enemy.shape.getPosition()));
-        std::cout << normalizeGOAP(enemy.shape.getPosition() - sf::Vector2f(targPos.x * 40, targPos.y * 40)).x <<  normalizeGOAP(enemy.shape.getPosition() - sf::Vector2f(targPos.x * 40, targPos.y * 40)).y << std::endl;
+        //std::cout << normalizeGOAP(enemy.shape.getPosition() - sf::Vector2f(targPos.x * 40, targPos.y * 40)).x <<  normalizeGOAP(enemy.shape.getPosition() - sf::Vector2f(targPos.x * 40, targPos.y * 40)).y << std::endl;
     }
     if (isClose(enemy.shape.getPosition(),sf::Vector2f(targPos.x * 40, targPos.y * 40)))
     {
-        std::cout << "PatrolAction::moveTowards" << std::endl;
+        //std::cout << "PatrolAction::moveTowards" << std::endl;
         enemy.pathIndex++;
     }
 }
@@ -45,10 +45,10 @@ void PatrolAction::Execute(State& state,GOAPEnemy& enemy)
         return;
     }
     std::cerr << enemy.pathIndex << std::endl;
-    if (enemy.path.size() == 0 || enemy.path.size() - 1 == enemy.pathIndex)
+    if (enemy.path.size() == 0 || enemy.path.size() == enemy.pathIndex)
     {
-        std::cout << "calculate patrol" << std::endl;
-        enemy.path = Pathfinding::findPath(grid, sf::Vector2i(2,2), position[enemy.i]);
+        //std::cout << "calculate patrol" << std::endl;
+        enemy.path = Pathfinding::findPath(grid, sf::Vector2i(enemy.shape.getPosition().x/40, enemy.shape.getPosition().y / 40), position[enemy.i]);
         std::cout << enemy.pathIndex << std::endl;
     }
     if (!enemy.path.empty() && enemy.pathIndex < enemy.path.size()) {
@@ -56,6 +56,7 @@ void PatrolAction::Execute(State& state,GOAPEnemy& enemy)
     }
     if (isClose(enemy.shape.getPosition(),sf::Vector2f(enemy.path[enemy.path.size()-1].x * 40, enemy.path[enemy.path.size()-1].y * 40)))
     {
+        std::cout << "reset\n";
         enemy.pathIndex = 0;
         enemy.i++;
         enemy.path.clear();
