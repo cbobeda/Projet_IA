@@ -7,11 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="Merge">
+    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/PatrolAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PatrolAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +58,7 @@
     "C/C++ Project.Project1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Astar",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
