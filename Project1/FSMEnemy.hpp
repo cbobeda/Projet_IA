@@ -1,6 +1,6 @@
 #ifndef FSMENEMY
 #define FSMENEMY
-
+#include "Enemy.hpp"
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
@@ -18,10 +18,12 @@ public:
     FSMEnemy(sf::Vector2f startPos, float radius, float radiusCircle);
 
     bool detectPlayer(sf::Vector2f playerPos);
-    void patrol();
-    void chase(sf::Vector2f playerPos);
-    void update(sf::Vector2f playerPos, float deltaTime);
-    void search(sf::Vector2f lastPlayerPos, float deltaTime);
+    void patrol(Grid& grid);
+    void chase(sf::Vector2f playerPos, Grid& grid);
+    void update(sf::Vector2f playerPos, float deltaTime, Grid& grid);
+    bool isWalkable(float x, float y, Grid& grid);
+    void search(sf::Vector2f lastPlayerPos, float deltaTime, Grid& grid);
+    
 };
 
 #endif

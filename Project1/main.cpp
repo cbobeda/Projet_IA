@@ -44,8 +44,9 @@ void updateGame(float& deltaTime, Player& player, std::vector<GOAPEnemy>& goapEn
 
         
     for (auto& enemy : fsmEnemies) {
-        enemy.update(player.getPosition(), deltaTime);
+        enemy.update(player.getPosition(), deltaTime, grid);
     }
+
 
     blackboard.SetValue("player_x", static_cast<int>(player.getPosition().x));
     blackboard.SetValue("player_y", static_cast<int>(player.getPosition().y));
@@ -62,7 +63,6 @@ int main() {
     window.setFramerateLimit(60);
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     Player player(200, 400);
-    //Grid grid;
     sf::RectangleShape enemyShape(sf::Vector2f(20.0f, 20.0f));
     enemyShape.setFillColor(sf::Color::Green);
 
@@ -91,19 +91,7 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-        {
-            grid.cells[mousePos.y / 40][mousePos.x / 40].walkable = 0;
-        }
-        if (res.empty())
-        {
-            res = Pathfinding::findPath(grid, sf::Vector2i(1,1), sf::Vector2i(5,5));
-            
-            for (auto path : res)
-            {
-                grid.cells[path.y][path.x].walkable = 0;
-            }
-        }*/
+       
         player.update(deltaTime, grid);
 
         std::thread updateThread = std::thread(updateGame,std::ref(deltaTime),std::ref(player), std::ref(goapEnemies), std::ref(fsmEnemies), std::ref(enemyShape));
