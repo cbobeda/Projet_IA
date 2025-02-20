@@ -37,7 +37,7 @@ void PatrolAction::moveTowards(sf::Vector2i targPos,GOAPEnemy& enemy)
     }
 }
 
-void PatrolAction::Execute(State& state,GOAPEnemy& enemy)
+void PatrolAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
 {
     if (enemy.i >= 4) {
         std::cerr << "Erreur : Indice 'i' dépasse la taille de 'position'.\n";

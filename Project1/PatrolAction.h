@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Action.h"
 #include "SFML/Graphics.hpp"
-#include "Pathfinding.h"
+
 #include <iostream>
 class PatrolAction : public Action
 {
@@ -11,5 +11,5 @@ private:
 public:
     void moveTowards(sf::Vector2i targPos,GOAPEnemy& enemy);
     bool CanExecute(const State& state) override;
-    void Execute(State& state,GOAPEnemy& enemy) override;
+    void Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player) override;
 };

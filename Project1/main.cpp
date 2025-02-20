@@ -1,3 +1,5 @@
+#include <thread>
+#include <mutex>
 #include <SFML/Graphics.hpp>
 #include "Player.hpp"
 #include "Enemy.hpp"
@@ -10,8 +12,36 @@
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
 
+std::mutex mtx;
+
 std::vector<sf::Vector2i> res;
 extern Grid grid;
+
+void updateGame(float& deltaTime, Player& player, std::vector<GOAPEnemy>& goapEnemies, std::vector<FSMEnemy>& fsmEnemies)
+{
+
+    std::scoped_lock lock(mtx); 
+    for (auto& enemy : goapEnemies) {
+        enemy.update(deltaTime, grid, enemy,sf::Vector2i(player.getPosition().x / 40 , player.getPosition().y / 40));
+        if (std::abs(enemy.shape.getPosition().x - player.shape.getPosition().x) < 100 && std::abs(enemy.shape.getPosition().y - player.shape.getPosition().y) < 100 )
+        {
+            enemy.agent.state.playerInSight = true;
+        }
+        else
+        {
+            enemy.agent.state.playerInSight = false;
+        }
+        if (enemy.agent.state.health < 40)
+        {
+            enemy.agent.state.lowHealth = true;
+        }
+    }
+
+        
+    for (auto& enemy : fsmEnemies) {
+        enemy.update(player.getPosition(), deltaTime);
+    }
+}
 int main() {
     sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Jeu SFML - IA Ennemis");
     window.setFramerateLimit(60);
@@ -29,7 +59,7 @@ int main() {
     grid.loadFromFile("map.txt");
 
     sf::Clock clock;
-
+    
     while (window.isOpen()) {
         sf::Time dt = clock.restart();
         float deltaTime = dt.asSeconds();
@@ -54,15 +84,8 @@ int main() {
         }*/
         player.update(deltaTime, grid);
 
+        std::thread updateThread = std::thread(updateGame,std::ref(deltaTime),std::ref(player), std::ref(goapEnemies), std::ref(fsmEnemies));
         
-        for (auto& enemy : goapEnemies) {
-            enemy.update(deltaTime, grid, enemy);
-        }
-
-        
-        for (auto& enemy : fsmEnemies) {
-            enemy.update(player.getPosition(), deltaTime);
-        }
 
         window.clear();
 
@@ -82,7 +105,9 @@ int main() {
         }
 
         window.display();
+        updateThread.join();
     }
+    
 
     return 0;
 }

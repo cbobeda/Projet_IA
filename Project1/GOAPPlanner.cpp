@@ -1,6 +1,11 @@
 ﻿#include "GOAPPlanner.h"
 
 
+float normalizeGOAPCost(float cost, float minCost, float maxCost)
+{
+    return ((cost - minCost) / (maxCost - minCost)) * 100.0f;
+}
+
 std::vector<std::unique_ptr<Action>> GOAPPlanner::Plan(const State& initialState)
 {
     int temp = 10000;
@@ -14,13 +19,13 @@ std::vector<std::unique_ptr<Action>> GOAPPlanner::Plan(const State& initialState
     std::unique_ptr<AttackAction> attack = std::make_unique<AttackAction>();
     std::unique_ptr<FleeAction> flee = std::make_unique<FleeAction>();
     
-    patrol->cost = initialState.playerInSight * 100 - initialState.energy;
+    patrol->cost = normalizeGOAPCost(initialState.playerInSight * 100,0,100);
     costs.push_back(std::move(patrol));
-    follow->cost = initialState.health - initialState.energy * !initialState.lowHealth;
+    follow->cost = normalizeGOAPCost((initialState.health - initialState.energy) * initialState.lowHealth * !initialState.playerInSight,0,100);
     costs.push_back(std::move(follow));
-    attack->cost = initialState.health - initialState.energy * !initialState.playerInRange;
+    attack->cost = normalizeGOAPCost(initialState.health * !initialState.playerInRange,0,100);
     costs.push_back(std::move(attack));
-    flee->cost = !initialState.lowHealth * 100;
+    flee->cost = normalizeGOAPCost(!initialState.lowHealth * 100,0,100);
     costs.push_back(std::move(flee));
 
     for (int i = 0; i < 4;i++)

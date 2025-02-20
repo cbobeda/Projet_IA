@@ -8,13 +8,13 @@ GOAPAgent::GOAPAgent()
     state.playerInSight = false;
 }
 
-void GOAPAgent::PerformActions(GOAPEnemy& enemy)
+void GOAPAgent::PerformActions(GOAPEnemy& enemy,sf::Vector2i player)
 {
     std::vector<std::unique_ptr<Action>> plan = planner.Plan(state);
 
     for (auto& action : plan) {
         if (action->CanExecute(state)) {
-            action->Execute(state,enemy);  // Exécute l'action
+            action->Execute(state,enemy,player);  // Exécute l'action
         }
         else {
             std::cout << "Action impossible : " << typeid(*action).name() << "\n";

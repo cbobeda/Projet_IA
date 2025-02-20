@@ -3,10 +3,10 @@
 class GOAPAgent
 {
 private:
-    State state;
     GOAPPlanner planner;
 public:
+    State state;
     GOAPAgent();
-    void PerformActions(GOAPEnemy& enemy);
+    void PerformActions(GOAPEnemy& enemy,sf::Vector2i player);
     void PrintState();
 };
