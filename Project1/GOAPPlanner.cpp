@@ -19,11 +19,11 @@ std::vector<std::unique_ptr<Action>> GOAPPlanner::Plan(const State& initialState
     std::unique_ptr<AttackAction> attack = std::make_unique<AttackAction>();
     std::unique_ptr<FleeAction> flee = std::make_unique<FleeAction>();
     
-    patrol->cost = normalizeGOAPCost(initialState.playerInSight * 100,0,100);
+    patrol->cost = normalizeGOAPCost(initialState.playerInSight * 100 - initialState.energy,0,100);
     costs.push_back(std::move(patrol));
     follow->cost = normalizeGOAPCost((initialState.health - initialState.energy) * initialState.lowHealth * !initialState.playerInSight,0,100);
     costs.push_back(std::move(follow));
-    attack->cost = normalizeGOAPCost(initialState.health * !initialState.playerInRange,0,100);
+    attack->cost = normalizeGOAPCost((initialState.health - initialState.energy) * !initialState.playerInRange,0,100);
     costs.push_back(std::move(attack));
     flee->cost = normalizeGOAPCost(!initialState.lowHealth * 100,0,100);
     costs.push_back(std::move(flee));

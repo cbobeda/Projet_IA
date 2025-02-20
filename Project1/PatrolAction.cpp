@@ -59,6 +59,7 @@ void PatrolAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
         std::cout << "reset\n";
         enemy.pathIndex = 0;
         enemy.i++;
+        enemy.agent.state.energy -=10;
         enemy.path.clear();
     }
 }
