@@ -22,7 +22,7 @@ std::mutex mtx;
 std::vector<sf::Vector2i> res;
 extern Grid grid;
 
-void updateGame(float& deltaTime, Player& player, std::vector<GOAPEnemy>& goapEnemies, std::vector<FSMEnemy>& fsmEnemies)
+void updateGame(float& deltaTime, Player& player, std::vector<GOAPEnemy>& goapEnemies, std::vector<FSMEnemy>& fsmEnemies, sf::RectangleShape& enemyShape)
 {
 
     std::scoped_lock lock(mtx); 
@@ -46,6 +46,16 @@ void updateGame(float& deltaTime, Player& player, std::vector<GOAPEnemy>& goapEn
     for (auto& enemy : fsmEnemies) {
         enemy.update(player.getPosition(), deltaTime);
     }
+
+    blackboard.SetValue("player_x", static_cast<int>(player.getPosition().x));
+    blackboard.SetValue("player_y", static_cast<int>(player.getPosition().y));
+
+    NodeState state = behaviourTree->execute();
+
+    enemyShape.setPosition(
+        static_cast<float>(blackboard.GetValue("enemy_x")),
+        static_cast<float>(blackboard.GetValue("enemy_y"))
+    );
 }
 int main() {
     sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Jeu SFML - IA Ennemis");
@@ -96,20 +106,9 @@ int main() {
         }*/
         player.update(deltaTime, grid);
 
-        std::thread updateThread = std::thread(updateGame,std::ref(deltaTime),std::ref(player), std::ref(goapEnemies), std::ref(fsmEnemies));
-        
-
+        std::thread updateThread = std::thread(updateGame,std::ref(deltaTime),std::ref(player), std::ref(goapEnemies), std::ref(fsmEnemies), std::ref(enemyShape));
         
         
-        blackboard.SetValue("player_x", static_cast<int>(player.getPosition().x));
-        blackboard.SetValue("player_y", static_cast<int>(player.getPosition().y));
-
-        NodeState state = behaviourTree->execute();
-
-        enemyShape.setPosition(
-            static_cast<float>(blackboard.GetValue("enemy_x")),
-            static_cast<float>(blackboard.GetValue("enemy_y"))
-        );
 
         window.clear();
 

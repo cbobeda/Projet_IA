@@ -7,23 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/Action.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Action.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/AttackAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/AttackAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/AttackAction.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/AttackAction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/FleeAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/FleeAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/FleeAction.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/FleeAction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/FollowAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/FollowAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/FollowAction.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/FollowAction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/GOAPAgent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPAgent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/GOAPAgent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPAgent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/GOAPEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPEnemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/GOAPEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPEnemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/GOAPPlanner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPPlanner.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/PatrolAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PatrolAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/PatrolAction.h" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PatrolAction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/Project1.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Project1.vcxproj" afterDir="false" />
+    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="Goap tweaking">
       <change beforePath="$PROJECT_DIR$/Project1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.pdb" afterDir="false" />
     </list>
@@ -58,6 +42,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/include/thread" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/include/vector" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/cleme/RiderProjects/Projet_IA/Project1/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/cleme/RiderProjects/Projet_IA/Project1/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -117,7 +103,7 @@
       <workItem from="1739796588958" duration="4775000" />
       <workItem from="1739801390257" duration="6171000" />
       <workItem from="1739860696564" duration="5547000" />
-      <workItem from="1740039232870" duration="3702000" />
+      <workItem from="1740039232870" duration="4201000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation du GOAP">
       <option name="closed" value="true" />
@@ -167,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739867326889</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Goap tweaking">
+      <option name="closed" value="true" />
+      <created>1740043064263</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740043064263</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +188,7 @@
     <MESSAGE value="debut" />
     <MESSAGE value="Push error" />
     <MESSAGE value="Merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
+    <MESSAGE value="Goap tweaking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Goap tweaking" />
   </component>
 </project>
