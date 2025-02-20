@@ -5,10 +5,15 @@
 #include "GOAPEnemy.h"
 #include "Pathfinding.h"
 #include "FSMEnemy.hpp"
+#include "BehaviourTreeSetup.hpp"
 #include <vector>
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
+Blackboard blackboard;
+int currentWaypoint = 0;
+BTNode* behaviourTree;
+
 
 std::vector<sf::Vector2i> res;
 extern Grid grid;
@@ -18,12 +23,19 @@ int main() {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     Player player(200, 400);
     //Grid grid;
+    sf::RectangleShape enemyShape(sf::Vector2f(20.0f, 20.0f));
+    enemyShape.setFillColor(sf::Color::Green);
 
-    
+    blackboard.SetValue("enemy_x", 300);
+    blackboard.SetValue("enemy_y", 300);
+
+
     std::vector<GOAPEnemy> goapEnemies = { GOAPEnemy(100, 100)};
 
     
     std::vector<FSMEnemy> fsmEnemies = { FSMEnemy(sf::Vector2f(100, 100), 150.0f, 20.0f), FSMEnemy(sf::Vector2f(700, 100), 150.0f, 20.0f) };
+
+    BehaviourTreeSetup::setup(behaviourTree, blackboard, currentWaypoint);
 
 
     grid.loadFromFile("map.txt");
@@ -63,6 +75,15 @@ int main() {
         for (auto& enemy : fsmEnemies) {
             enemy.update(player.getPosition(), deltaTime);
         }
+        blackboard.SetValue("player_x", static_cast<int>(player.getPosition().x));
+        blackboard.SetValue("player_y", static_cast<int>(player.getPosition().y));
+
+        NodeState state = behaviourTree->execute();
+
+        enemyShape.setPosition(
+            static_cast<float>(blackboard.GetValue("enemy_x")),
+            static_cast<float>(blackboard.GetValue("enemy_y"))
+        );
 
         window.clear();
 
@@ -81,8 +102,10 @@ int main() {
             window.draw(enemy.circle);  
         }
 
+        window.draw(enemyShape);
+
         window.display();
     }
-
+    delete behaviourTree;
     return 0;
 }
