@@ -7,8 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="DOCUMENTATION">
+    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="GOAP tweak">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/FollowAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/FollowAction.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +105,7 @@
       <workItem from="1739801390257" duration="6171000" />
       <workItem from="1739860696564" duration="5547000" />
       <workItem from="1740039232870" duration="4201000" />
-      <workItem from="1740139937992" duration="1261000" />
+      <workItem from="1740139937992" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation du GOAP">
       <option name="closed" value="true" />
@@ -177,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740143356473</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="GOAP tweak">
+      <option name="closed" value="true" />
+      <created>1740143992691</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740143992691</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +217,7 @@
     <MESSAGE value="Goap tweaking" />
     <MESSAGE value="tweak Goap" />
     <MESSAGE value="DOCUMENTATION" />
-    <option name="LAST_COMMIT_MESSAGE" value="DOCUMENTATION" />
+    <MESSAGE value="GOAP tweak" />
+    <option name="LAST_COMMIT_MESSAGE" value="GOAP tweak" />
   </component>
 </project>
