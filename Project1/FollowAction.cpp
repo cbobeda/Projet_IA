@@ -49,7 +49,7 @@ void FollowAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
         position[0] = player;
         enemy.path.clear();
     }
-    enemy.agent.state.energy += 10;
+    
     std::cerr << enemy.pathIndex << std::endl;
     if (enemy.path.size() == 0 || enemy.path.size() == enemy.pathIndex)
     {
