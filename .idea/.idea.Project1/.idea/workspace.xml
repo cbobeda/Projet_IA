@@ -7,10 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="GOAP tweak">
+    <list default="true" id="6027c994-c591-49b5-886c-3d59a575de5b" name="Changes" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/FollowAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/FollowAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/GOAPPlanner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/GOAPPlanner.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/Project1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Project1.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GOAPUpgrade" />
+        <entry key="$PROJECT_DIR$" value="Goaptweak" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -187,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740143992691</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="merge">
+      <option name="closed" value="true" />
+      <created>1740146489696</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740146489696</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +218,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Implementation du GOAP" />
     <MESSAGE value="poof" />
-    <MESSAGE value="merge" />
     <MESSAGE value="debut" />
     <MESSAGE value="Push error" />
     <MESSAGE value="Merge" />
@@ -218,6 +225,7 @@
     <MESSAGE value="tweak Goap" />
     <MESSAGE value="DOCUMENTATION" />
     <MESSAGE value="GOAP tweak" />
-    <option name="LAST_COMMIT_MESSAGE" value="GOAP tweak" />
+    <MESSAGE value="merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
   </component>
 </project>

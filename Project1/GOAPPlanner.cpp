@@ -21,14 +21,14 @@ std::vector<std::unique_ptr<Action>> GOAPPlanner::Plan(const State& initialState
     
     patrol->cost = normalizeGOAPCost(initialState.playerInSight * 100 - initialState.energy,0,100);
     costs.push_back(std::move(patrol));
-    follow->cost = normalizeGOAPCost((initialState.health - initialState.energy) * initialState.lowHealth * !initialState.playerInSight,0,100);
+    follow->cost = normalizeGOAPCost((initialState.health - initialState.energy) * !initialState.lowHealth * !initialState.playerInSight,0,100);
     costs.push_back(std::move(follow));
-    attack->cost = normalizeGOAPCost((initialState.health - initialState.energy) * !initialState.playerInRange,0,100);
+    /*attack->cost = normalizeGOAPCost((initialState.health - initialState.energy) * !initialState.playerInRange,0,100);
     costs.push_back(std::move(attack));
     flee->cost = normalizeGOAPCost(!initialState.lowHealth * 100,0,100);
-    costs.push_back(std::move(flee));
+    costs.push_back(std::move(flee));*/
 
-    for (int i = 0; i < 4;i++)
+    for (int i = 0; i < 2;i++)
     {
         if (costs[i]->cost < temp)
         {

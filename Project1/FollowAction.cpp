@@ -18,7 +18,7 @@ sf::Vector2f normalizeGOAPF(const sf::Vector2f& vector)
     return sf::Vector2f(vector.x / length, vector.y / length);
 }
 
-bool isCloseF(sf::Vector2f vector1, sf::Vector2f vector2, float tolerance = 5.f)
+bool isCloseF(sf::Vector2f vector1, sf::Vector2f vector2, float tolerance = 1.f)
 {
     return std::hypot(vector1.x - vector2.x, vector1.y - vector2.y) <= tolerance;
 }
@@ -38,11 +38,6 @@ void moveTowardsF(sf::Vector2i targPos,GOAPEnemy& enemy)
 }
 void FollowAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
 {
-    if (enemy.i >= 1) {
-        std::cerr << "Erreur : Indice 'i' dépasse la taille de 'position'.\n";
-        enemy.i = 0;
-        return;
-    }
     
     if (position[0] != player)
     {
@@ -54,7 +49,7 @@ void FollowAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
     if (enemy.path.size() == 0 || enemy.path.size() == enemy.pathIndex)
     {
         //std::cout << "calculate patrol" << std::endl;
-        enemy.path = Pathfinding::findPath(grid, sf::Vector2i(enemy.shape.getPosition().x/40, enemy.shape.getPosition().y / 40), position[enemy.i]);
+        enemy.path = Pathfinding::findPath(grid, sf::Vector2i(enemy.shape.getPosition().x/40, enemy.shape.getPosition().y / 40), position[0]);
         std::cout << enemy.pathIndex << std::endl;
     }
     if (!enemy.path.empty() && enemy.pathIndex < enemy.path.size() && !isCloseF(enemy.shape.getPosition(),sf::Vector2f(enemy.path[enemy.path.size()-1].x * 40, enemy.path[enemy.path.size()-1].y * 40))) {
@@ -64,7 +59,7 @@ void FollowAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
     if (isCloseF(enemy.shape.getPosition(),sf::Vector2f(enemy.path[enemy.path.size()-1].x * 40, enemy.path[enemy.path.size()-1].y * 40)))
     {
         std::cout << "reset\n";
-        enemy.i++;
+        enemy.pathIndex = 0;
         enemy.agent.state.playerInRange = true;
         enemy.path.clear();
     }
