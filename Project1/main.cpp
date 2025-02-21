@@ -28,7 +28,7 @@ void updateGame(float& deltaTime, Player& player, std::vector<GOAPEnemy>& goapEn
     std::scoped_lock lock(mtx); 
     for (auto& enemy : goapEnemies) {
         enemy.update(deltaTime, grid, enemy,sf::Vector2i(player.getPosition().x / 40 , player.getPosition().y / 40));
-        if (std::abs(enemy.shape.getPosition().x - player.shape.getPosition().x) < 100 && std::abs(enemy.shape.getPosition().y - player.shape.getPosition().y) < 100 )
+        if (std::abs(enemy.shape.getPosition().x - player.shape.getPosition().x) < 500 && std::abs(enemy.shape.getPosition().y - player.shape.getPosition().y) < 500 )
         {
             enemy.agent.state.playerInSight = true;
         }
