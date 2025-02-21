@@ -9,4 +9,5 @@ bool AttackAction::CanExecute(const State& state)
 void AttackAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
 {
     enemy.shape.setFillColor(sf::Color::Green);
+    std::cout << "attack" << std::endl;
 }

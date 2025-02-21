@@ -38,7 +38,7 @@ void moveTowardsF(sf::Vector2i targPos,GOAPEnemy& enemy)
 }
 void FollowAction::Execute(State& state,GOAPEnemy& enemy,sf::Vector2i player)
 {
-    
+    enemy.shape.setFillColor(sf::Color::Red);
     if (position[0] != player)
     {
         position[0] = player;

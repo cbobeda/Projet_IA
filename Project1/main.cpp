@@ -36,6 +36,14 @@ void updateGame(float& deltaTime, Player& player, std::vector<GOAPEnemy>& goapEn
         {
             enemy.agent.state.playerInSight = false;
         }
+        if (std::abs(enemy.shape.getPosition().x - player.shape.getPosition().x) < 70 && std::abs(enemy.shape.getPosition().y - player.shape.getPosition().y) < 70 )
+        {
+            enemy.agent.state.playerInRange = true;
+        }
+        else
+        {
+            enemy.agent.state.playerInRange = false;
+        }
         if (enemy.agent.state.health < 40)
         {
             enemy.agent.state.lowHealth = true;
