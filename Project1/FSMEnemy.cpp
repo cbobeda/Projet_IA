@@ -17,7 +17,7 @@ bool FSMEnemy::detectPlayer(sf::Vector2f playerPos) {
 
 void FSMEnemy::patrol() {
     static int currentWaypoint = 0;
-    static sf::Vector2f waypoints[4] = { sf::Vector2f(100, 300), sf::Vector2f(500, 100), sf::Vector2f(100, 300), sf::Vector2f(500, 300) };
+    static sf::Vector2f waypoints[4] = { sf::Vector2f(100, 300), sf::Vector2f(100, 500), sf::Vector2f(600, 500), sf::Vector2f(600, 300) };
     sf::Vector2f target = waypoints[currentWaypoint];
     sf::Vector2f direction = target - position;
     float distance = std::sqrt(direction.x * direction.x + direction.y * direction.y);
@@ -50,7 +50,8 @@ void FSMEnemy::search(sf::Vector2f lastPlayerPos, float deltaTime) {
 
     if (searchTimer == 0.0f) {
         searchDirection = sf::Vector2f(rand() % 2 == 0 ? -1 : 1, rand() % 2 == 0 ? -1 : 1);
-        searchDirection /= std::sqrt(searchDirection.x * searchDirection.x + searchDirection.y * searchDirection.y);
+        float length = std::sqrt(searchDirection.x * searchDirection.x + searchDirection.y * searchDirection.y);
+        if (length > 0) searchDirection /= length; 
     }
 
     searchTimer += deltaTime;
@@ -58,37 +59,45 @@ void FSMEnemy::search(sf::Vector2f lastPlayerPos, float deltaTime) {
         position += searchDirection * 5.f * deltaTime;
     }
     else {
-        searchTimer = 0.0f;
-        currentState = PATROL;
+        searchTimer = 0.0f; 
+        currentState = PATROL;  
     }
 
-    float distance = std::sqrt((lastPlayerPos.x - position.x) * (lastPlayerPos.x - position.x) + (lastPlayerPos.y - position.y) * (lastPlayerPos.y - position.y));
-    if (distance < detectionRadius) {
+    
+    if (detectPlayer(lastPlayerPos)) {
         searchTimer = 0.0f;
+        currentState = CHASE;
     }
 
     circle.setPosition(position);
 }
 
+
 void FSMEnemy::update(sf::Vector2f playerPos, float deltaTime) {
     switch (currentState) {
     case PATROL:
         patrol();
-        if (detectPlayer(playerPos)) currentState = CHASE;
+        if (detectPlayer(playerPos)) {
+            currentState = CHASE;
+        }
         break;
 
     case CHASE:
         chase(playerPos);
         if (!detectPlayer(playerPos)) {
-            lastPlayerPosition = playerPos;
+            lastPlayerPosition = playerPos; 
             currentState = SEARCH;
         }
         break;
 
     case SEARCH:
         search(lastPlayerPosition, deltaTime);
+        if (currentState == PATROL) {  
+            patrol();
+        }
         break;
     }
 }
+
 
 

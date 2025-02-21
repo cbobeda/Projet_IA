@@ -73,7 +73,7 @@ int main() {
     std::vector<GOAPEnemy> goapEnemies = { GOAPEnemy(100, 100)};
 
     
-    std::vector<FSMEnemy> fsmEnemies = { FSMEnemy(sf::Vector2f(100, 100), 150.0f, 20.0f), FSMEnemy(sf::Vector2f(700, 100), 150.0f, 20.0f) };
+    std::vector<FSMEnemy> fsmEnemies = { FSMEnemy(sf::Vector2f(100, 100), 150.0f, 20.0f), FSMEnemy(sf::Vector2f(200, 100), 150.0f, 20.0f) };
 
     BehaviourTreeSetup::setup(behaviourTree, blackboard, currentWaypoint);
 
